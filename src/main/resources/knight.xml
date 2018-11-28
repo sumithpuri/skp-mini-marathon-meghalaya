@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+			http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+<bean id="quest" class="me.sumithpuri.github.meghalaya.spring.di.sample.HolyGrailQuest"/>
+<bean id="knight" class="me.sumithpuri.github.meghalaya.spring.di.sample.KnightOfTheRoundTable">
+	<constructor-arg value="Bedivere" />
+	<property name="quest" ref="quest" />
+</bean>
+<bean id="minstrel" class="me.sumithpuri.github.meghalaya.spring.aop.sample.Minstrel"/>
+<aop:config>
+	<aop:aspect ref="minstrel">
+		<aop:pointcut id="questPointcut" expression="execution(* *.embarkOnQuest(..)) and target(bean)" />
+		<aop:before method="singBefore" pointcut-ref="questPointcut" arg-names="bean" ></aop:before>
+		<aop:after-returning method="singAfter" pointcut-ref="questPointcut" arg-names="bean" />
+	</aop:aspect>
+</aop:config>
+</beans>
