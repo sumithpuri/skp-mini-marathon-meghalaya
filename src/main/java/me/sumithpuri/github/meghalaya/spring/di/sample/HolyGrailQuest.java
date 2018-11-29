@@ -7,10 +7,10 @@ package me.sumithpuri.github.meghalaya.spring.di.sample;
 
  * GitHub URL 			https://github.com/sumithpuri
  * Code Sample			Brainbench Spring 2.5 Certification [+ Spring In Action Samples]
- * Sample Topic			Core Spring (Basics, Dependency Injection)
+ * Sample Topic			Core Spring (AOP)
  * Certificate URL		https://goo.gl/X321kd
- * Package Prefix 		me.sumithpuri.github.assam
- * Project Codename		assam
+ * Package Prefix 		me.sumithpuri.github.meghalaya
+ * Project Codename		meghalaya
  * Contact E-Mail		code@sumithpuri.me
  * Contact WhatsApp		+91 9591497974
  *
